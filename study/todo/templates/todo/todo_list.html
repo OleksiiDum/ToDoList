@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav>
+        <img src="#" alt="logo" width="24" heigth="24"/>
+        <a href="{% url 'index' %}">Main Page</a>
+    </nav>
+    <main>
+        <h1>To Do List:</h1>
+        <ul>
+            {% for todo in todos %}
+                <li>
+                    <h3>{{ todo }}</h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer><p>Copyright</p><img src="#" alt="facebook"><img src="#" alt="twitter"><img src="#" alt="social"></footer>
+
+</body>
+</html>

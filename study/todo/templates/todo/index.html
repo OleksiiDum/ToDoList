@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="#" alt="logo"></div>
+        <a href="{% url 'todo_list' %}">To Do List</a>
+    </nav>
+    <main>
+        <h1>You can add your ToDo's here:</h1>
+        <form id="contact_form" action="#" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" onclick="submitForm()">
+            <script>
+                function submitForm() {
+                    let frm = document.getElementById('contact_form')[0];
+                    
+                    frm.reset();
+                    return false;
+                }
+            </script>
+        </form>
+    </main>
+    <footer><p>Copyright</p><img src="#" alt="facebook"><img src="#" alt="twitter"><img src="#" alt="social"></footer>
+</body>
+</html>
